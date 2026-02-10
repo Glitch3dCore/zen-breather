@@ -1,0 +1,118 @@
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-v31-latin-700.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto-v50-latin-regular.woff2') format('woff2');
+}
+
+body {
+    background-color: #121212;
+    color: #f1f5f9;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 2rem;
+    color: #5ec0d8;
+    letter-spacing: 2px;
+}
+
+.circle-container {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto 3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.circle {
+    background-color: #121212;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    border: 8px solid #5ec0d8;
+    box-shadow: 0 0 20px rgba(94, 192, 216, 0.2);
+    transform: scale(0.3);
+    transition: all 0.5s ease;
+}
+
+.circle.grow {
+    animation: breathe 8s infinite ease-in-out;
+}
+
+.circle-container p {
+    position: absolute;
+    z-index: 2;
+    font-size: 1.5rem;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid #5ec0d8;
+    color: #5ec0d8;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: #5ec0d8;
+    color: #121212;
+    box-shadow: 0 0 15px rgba(94, 192, 216, 0.4);
+}
+
+.back-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.back-link:hover { color: #fff; }
+
+
+@keyframes breathe {
+    0% {
+        transform: scale(0.3);
+        border-color: #5ec0d8;
+        box-shadow: 0 0 20px rgba(94, 192, 216, 0.2);
+    }
+    40% {
+        transform: scale(1);
+        border-color: #ddd6fe;
+        box-shadow: 0 0 40px rgba(221, 214, 254, 0.5);
+    }
+    100% {
+        transform: scale(0.3);
+        border-color: #5ec0d8;
+        box-shadow: 0 0 20px rgba(94, 192, 216, 0.2);
+    }
+}
